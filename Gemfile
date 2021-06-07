@@ -5,6 +5,17 @@ ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
+# devise authentication system
+gem 'devise-i18n'
+gem 'devise'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+gem 'devise-bootstrap-views', '~> 1.0'
+#gem 'twitter-bootstrap-rails'
+#gem 'devise-rails-views'
+# java query js
+gem 'jquery-rails'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
