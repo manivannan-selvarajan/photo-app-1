@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag "application", :media => "all" %>
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
     <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
@@ -45,39 +45,36 @@
         </button>
         <a class="navbar-brand" href="#">PhotoApp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+         <ul class="nav navbar-nav">
+           <li><%= link_to "Link1", "/path1"  %></li>
+           <li><%= link_to "Link2", "/path2"  %></li>
+           <li><%= link_to "Link3", "/path3"  %></li>
+         </ul>
+          <ul class="nav navbar-right col-md-4">
+            <% if current_user %>
+              <li class="col-md-8 user-name">
+                <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+                    edit_user_registration_path, title: 'Edit Profile' %>
+              </li>
+
+              <li class="col-md-3 logout">
+                  <%= button_to "Log out", destroy_user_session_path , :method => :delete , class: "btn btn-danger logout-button" %>
+              </li>
+            <% else %>
+              <li class="col-md-4 pull-right">
+                  <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; LydiaBetsy 2021</p>
-      </footer>
-
-    </div> <!-- /container -->
-
+    <div id="page-content">
+     <%= render 'layouts/messages' %>
+     <div class="container">
+       <%= yield %>
+     </div>
+     <%= render 'layouts/footer' %>
+   </div>
   </body>
 </html>
