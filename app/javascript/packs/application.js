@@ -23,7 +23,7 @@ ActiveStorage.start()
 
 
 $(document).on('turbolinks:load', function() {
-  $('.close').alert('close')
+  
   $('jquery_selector').mailgun_validator({
        api_key: 'pubkey-c39cb17a838a07f0b84ad9c5b93768ef',
        in_progress: in_progress_callback, // called when request is made to validator
