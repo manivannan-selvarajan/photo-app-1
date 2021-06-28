@@ -22,9 +22,15 @@ ActiveStorage.start()
 
 
 
-//$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
+  $('jquery_selector').mailgun_validator({
+       api_key: 'pubkey-c39cb17a838a07f0b84ad9c5b93768ef',
+       in_progress: in_progress_callback, // called when request is made to validator
+       success: success_callback,         // called when validator has returned
+       error: validation_error,           // called when an error reaching the validator has occured
+   });
 //  $('.ui.dropdown').dropdown();
 //  $('.message .close').on('click', function() {
 //    $(this).closest('.message').transition('fade');
 //  });
-//})
+})
