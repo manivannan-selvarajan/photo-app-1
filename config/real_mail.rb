@@ -4,7 +4,7 @@ uri = URI('https://realemail.expeditedaddons.com')
 
 # Change the input parameters here
 uri.query = URI.encode_www_form({
-	api_key: 'UBAD8KYQ25S6F27XN760LG34IVZWCPMJO0H5E314T9819R',
+	api_key: 'JESW165OP8086L3DM9AG12QNCV5KY74B2R304F7XTUI9ZH',
 	email: 'email@example.org',
 	fix_typos: false
 })
