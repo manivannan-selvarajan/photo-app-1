@@ -13,9 +13,6 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'stripe'
-# Real Mail for Reduce bounced emails and errors by validating emails against MX records.
-# gem 'real_email', ' ~> 1.0', git: 'https://github.com/mbuckbee/Real-Email-Gem.git'
-# gem 'real_email', git: 'https://github.com/mbuckbee/Real-Email-Gem.git'
 # figaro for save the environment variables
 gem 'figaro'
 #gem 'twitter-bootstrap-rails'
