@@ -3,12 +3,12 @@
 //
 // Attaching to a form:
 //
-// $('jquery_selector').mailgun_validator({
-//     api_key: 'api-key',
-//     in_progress: in_progress_callback, // called when request is made to validator
-//     success: success_callback,         // called when validator has returned
-//     error: validation_error,           // called when an error reaching the validator has occured
-// });
+$('jquery_selector').mailgun_validator({
+    api_key: 'api-key',
+    in_progress: in_progress_callback, // called when request is made to validator
+    success: success_callback,         // called when validator has returned
+    error: validation_error,           // called when an error reaching the validator has occured
+});
 //
 //
 // Sample JSON in success callback:
