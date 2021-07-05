@@ -13,8 +13,6 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'stripe'
-# figaro for save the environment variables
-gem 'figaro'
 #gem 'twitter-bootstrap-rails'
 #gem 'devise-rails-views'
 # java query js

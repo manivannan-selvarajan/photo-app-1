@@ -19,8 +19,9 @@ ActionMailer::Base.smtp_settings = {
   :address        => ENV['MAILGUN_SMTP_SERVER'],
   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => 'lydia-photo-app.herokuapp.com',
+  :domain         => 'heroku.com',
   :authentication => :plain,
+  :enable_starttle_auto => true
 }
 
 ActionMailer::Base.delivery_method = :smtp
