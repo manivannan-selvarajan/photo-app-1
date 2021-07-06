@@ -14,7 +14,7 @@ import "channels"
 import ('bootstrap')
 //import 'bootstrap/dist/js/bootstrap'
 //import "bootstrap/dist/css/bootstrap";
-
+require 'stripe'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
