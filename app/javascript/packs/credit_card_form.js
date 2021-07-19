@@ -1,5 +1,6 @@
-$(document).on('ready turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
     var show_error, stripeResponseHandler, submitHandler;
+
     submitHandler = function (event) {
         var $form = $(event.target);
         $form.find("input[type=submit]").prop("disabled", true);
@@ -15,6 +16,7 @@ $(document).on('ready turbolinks:load', function() {
     $(".cc_form").on('submit', submitHandler);
           stripeResponseHandler = function (status, response) {
             var token, $form;
+            alert("In submit button")
             $form = $('.cc_form');
               if (response.error) {
                 console.log(response.error.message);

@@ -11,10 +11,10 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import ('bootstrap')
+import 'bootstrap'
 //import 'bootstrap/dist/js/bootstrap'
 //import "bootstrap/dist/css/bootstrap";
-required='stripe'
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -22,7 +22,7 @@ ActiveStorage.start()
 
 
 
-$(document).on('turbolinks:load', function() {
+//$(document).on('turbolinks:load', function() {
   // $('jquery_selector').mailgun_validator({
   //      api_key: 'pubkey-0a77b43de694aff71f2cf0838c62efd6',
   //      in_progress: in_progress_callback, // called when request is made to validator
@@ -33,4 +33,4 @@ $(document).on('turbolinks:load', function() {
 //  $('.message .close').on('click', function() {
 //    $(this).closest('.message').transition('fade');
 //  });
-})
+//})

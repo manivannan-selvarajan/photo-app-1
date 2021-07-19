@@ -31,11 +31,11 @@
       <div class="row col-md-12">
         <div class="form-group col-md-4 no-left-padding">
           <%= p.label :card_number, "Card Number", data: { stripe: 'label'} %>
-          <%= p.text_field :card_number, class: "form-control", required: true, data: { stripe: 'number'} %>
+          <%= p.text_field :card_number, class: "form-control", required: true, data: { stripe: 'card_number'} %>
         </div>
        <div class="form-group col-md-2">
         <%= p.label :card_cvv, "Card CVV", data: { stripe: 'label'} %>
-        <%= p.text_field :card_cvv, class: "form-control", required: true, data: { stripe: 'cvc'} %>
+        <%= p.text_field :card_cvv, class: "form-control", required: true, data: { stripe: 'card_cvv'} %>
        </div>
        <div class="form-group col-md-6">
         <div class="col-md-12">

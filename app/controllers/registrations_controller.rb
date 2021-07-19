@@ -9,7 +9,8 @@ class RegistrationsController < Devise::RegistrationsController
         if resource.persisted?
           @payment = Payment.new({email: params["user"]["email"],
             token: params[:payment]["token"], user_id: resource.id})
-
+            print "Hello!"
+            print @payment.user_id
           flash[:error] = "Please check registration errors" unless @payment.valid?
 
           begin
@@ -17,6 +18,15 @@ class RegistrationsController < Devise::RegistrationsController
             @payment.save
           rescue Exception => e
             flash[:error] = e.message
+
+            puts "Status is: #{e.http_status}"
+            puts "Type is: #{e.error.type}"
+            puts "Charge ID is: #{e.error.charge}"
+            # The following fields are optional
+            puts "Code is: #{e.error.code}" if e.error.code
+            puts "Decline code is: #{e.error.decline_code}" if e.error.decline_code
+            puts "Param is: #{e.error.param}" if e.error.param
+            puts "Message is: #{e.error.message}" if e.error.message
 
             resource.destroy
             puts 'Payment failed'
@@ -38,8 +48,6 @@ class RegistrationsController < Devise::RegistrationsController
           respond_with resource
         end
       end
-
-
   end
 
 
