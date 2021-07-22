@@ -14,13 +14,10 @@ import "channels"
 import 'bootstrap'
 //import 'bootstrap/dist/js/bootstrap'
 //import "bootstrap/dist/css/bootstrap";
-
+require("packs/credit_card_form")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-
-
 
 //$(document).on('turbolinks:load', function() {
   // $('jquery_selector').mailgun_validator({
