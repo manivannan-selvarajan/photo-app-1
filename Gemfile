@@ -13,6 +13,10 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'stripe'
+# image file upload we require the following gem files
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 # to set environment variables
 gem "figaro"
 #gem 'twitter-bootstrap-rails'
